@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="match.css">
+  </head>
+  <body>
+    <div class=full>
+    <div class='container'>
+    <div class="navigation-bar">
+        <div id="navigation-container">
+         <a href="index.html"><img src="logo4.png" height="70px"></a>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Browse Players</a></li>
+            <li><a href="match.html">Today's Matches</a></li>
+            <li><a href="newsheadline.html">Sports News</a></li>
+          </ul>
+        </div>
+    </div>
+  </div>
+  <div id='main'>
+    <h1 align=center><big><big>Today's Matches</big></big></h1><br><br>
+  </div>
+</div>
+<footer>
+	<div class="foot">
+        <p align="center">
+  <i class="fa fa-facebook-official w3-hover-opacity"></i>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-snapchat w3-hover-opacity"></i>
+  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <i class="fa fa-linkedin w3-hover-opacity"></i>
+<br><b>Address : Chitkara University,Rajpura</b><br><br>
+        <b>Contact : 9999977777</b><br><br>
+       <b>&copy Copyright 2019 All rights reserved</b></p><br>
+        </div>
+</footer>
+    <script>
+      var url = 'https://www.cricapi.com/api/matches?apikey=2r9Q3bXcsRYHEB3moGyhfd6iMKG2'
+
+      var xhr = new XMLHttpRequest();
+
+      xhr.open('GET', url)
+
+      xhr.onreadystatechange = test;
+
+      function test(){
+        if(this.status == 200 && this.readyState == 4){
+          res_data = JSON.parse(this.responseText);
+          localStorage.setItem('res_data', res_data);
+          console.log(res_data);
+
+          var today = new Date();
+          var dd = today.getDate();
+
+          var mm = today.getMonth()+1;
+          var yyyy = today.getFullYear();
+          if(dd<10)
+          {
+            dd='0'+dd;
+          }
+
+          if(mm<10)
+          {
+            mm='0'+mm;
+          }
+          today = yyyy+'-'+mm+'-'+dd;
+          console.log(today);
+
+          // var big = document.createElement('big');
+          // var b = document.createElement('b');
+          // b.appendChild(document.createTextNode('Toss Winner : '))
+          // big.appendChild(b);
+          // p.appendChild(big);
+          // p.appendChild(document.createTextNode(res_data.matches[i].toss_winner_team))
+          // p.appendChild(document.createTextNode('&nbsp'))
+          // p.appendChild(document.createTextNode('&nbsp'))
+          // p.appendChild(document.createTextNode('&nbsp'))
+          // var big = document.createElement('big');
+          // var b = document.createElement('b');
+          // b.appendChild(document.createTextNode('Match Winner : '))
+          // big.appendChild(b);
+          // p.appendChild(big);
+          // p.appendChild(document.createTextNode(res_data.matches[i].winner_team))
+
+
+
+
+          for(var i=0; i<res_data.matches.length; i++){
+            var x = res_data.matches[i].date.substring(0,10)
+            if(x == today){
+            var divm = document.getElementById('main');
+            if(divm.childNodes.length < 6){
+
+
+              var p = document.createElement('p');
+              p.setAttribute('class', 'date');
+              var big = document.createElement('big');
+              big.appendChild(document.createTextNode(res_data.matches[i].type+' match'));
+              p.appendChild(big);
+              p.appendChild(document.createElement('br'));
+              p.appendChild(document.createElement('br'));
+              p.appendChild(document.createElement('br'));
+              var b1 = document.createElement('b');
+              var t1 = document.createTextNode(res_data.matches[i]['team-1'])
+              b1.appendChild(t1);
+              var big = document.createElement('big');
+              big.appendChild(b1);
+              p.appendChild(big);
+              var b1 = document.createElement('b');
+              p.appendChild(document.createElement('br'));
+              p.appendChild(document.createElement('br'));
+              b1.appendChild(document.createTextNode('vs'));
+              var big = document.createElement('big');
+              big.appendChild(b1);
+              p.appendChild(big);
+              p.appendChild(document.createElement('br'));
+              p.appendChild(document.createElement('br'));
+              var b1 = document.createElement('b');
+              b1.appendChild(document.createTextNode(res_data.matches[i]['team-2']));
+              var big = document.createElement('big');
+              big.appendChild(b1);
+              p.appendChild(big);
+              var big = document.createElement('big');
+              var b = document.createElement('b');
+              p.appendChild(document.createElement('br'));
+              p.appendChild(document.createElement('br'));
+              var twin = res_data.matches[i].toss_winner_team
+              if(twin != null){
+              b.appendChild(document.createTextNode('Toss Winner : '))
+              big.appendChild(b);
+              p.appendChild(big);
+              p.appendChild(document.createTextNode(res_data.matches[i].toss_winner_team))
+              p.appendChild(document.createElement('br'));
+              p.appendChild(document.createElement('br'));
+              var big = document.createElement('big');
+              var b = document.createElement('b');}
+              var mwin = res_data.matches[i].winner_team
+              if(mwin != null){
+              b.appendChild(document.createTextNode('Match Winner : '))
+              big.appendChild(b);
+              p.appendChild(big);
+              p.appendChild(document.createTextNode(res_data.matches[i].winner_team))
+              p.appendChild(document.createElement('br'));}
+              p.appendChild(document.createElement('br'));
+              divm.appendChild(p);
+
+            }
+            else {
+              var hr = document.createElement("hr");
+              hr.setAttribute("class", "line1");
+              divm.appendChild(hr);
+
+
+              var p = document.createElement('p');
+              p.setAttribute('class', 'date');
+              var big = document.createElement('big');
+              big.appendChild(document.createTextNode(res_data.matches[i].type+' match'));
+              p.appendChild(big);
+              p.appendChild(document.createElement('br'));
+              p.appendChild(document.createElement('br'));
+              p.appendChild(document.createElement('br'));
+              var b1 = document.createElement('b');
+              b1.appendChild(document.createTextNode(res_data.matches[i]['team-1']));
+              var big = document.createElement('big');
+              big.appendChild(b1);
+              p.appendChild(big);
+              var b1 = document.createElement('b');
+              p.appendChild(document.createElement('br'));
+              p.appendChild(document.createElement('br'));
+              b1.appendChild(document.createTextNode('vs'));
+              var big = document.createElement('big');
+              big.appendChild(b1);
+              p.appendChild(big);
+              p.appendChild(document.createElement('br'));
+              p.appendChild(document.createElement('br'));
+              var b1 = document.createElement('b');
+              b1.appendChild(document.createTextNode(res_data.matches[i]['team-2']));
+              var big = document.createElement('big');
+              big.appendChild(b1);
+              p.appendChild(big);
+              var big = document.createElement('big');
+              var b = document.createElement('b');
+              p.appendChild(document.createElement('br'));
+              p.appendChild(document.createElement('br'));
+              var twin = res_data.matches[i].toss_winner_team
+              console.log(twin)
+              if(twin != null){
+              b.appendChild(document.createTextNode('Toss Winner : '))
+              big.appendChild(b);
+              p.appendChild(big);
+              p.appendChild(document.createTextNode(res_data.matches[i].toss_winner_team))
+              p.appendChild(document.createElement('br'));
+              p.appendChild(document.createElement('br'));}
+              var mwin = res_data.matches[i].winner_team
+              if(mwin != null){
+              var big = document.createElement('big');
+              var b = document.createElement('b');
+              b.appendChild(document.createTextNode('Match Winner : '))
+              big.appendChild(b);
+              p.appendChild(big);
+              p.appendChild(document.createTextNode(res_data.matches[i].winner_team))
+              p.appendChild(document.createElement('br'));}
+              p.appendChild(document.createElement('br'));
+              divm.appendChild(p);
+            }
+          }
+        }
+        }
+      }
+      xhr.send();
+
+    </script>
+  </body>
+</html>
