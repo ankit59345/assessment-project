@@ -1,0 +1,831 @@
+<html>
+<head>
+	<title>Player Statistics</title>
+	<link rel="stylesheet" href="player-stats.css">
+	</head>
+	<body>
+		<div class='container'>
+    <div class="navigation-bar">
+        <div id="navigation-container">
+         <a href="index.html"><img src="logo4.png" height="70px"></a>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Browse Players</a></li>
+            <li><a href="match.html">Today's Match</a></li>
+            <li><a href="newsheadline.html">Sports News</a></li>
+          </ul>
+        </div>
+    </div>
+  </div>
+		<div>
+			<big><big><big><h1 id='name' class="heading1"></h1></big></big></big>
+			<h2 id='country' class="heading1"></h2>
+			<img style="margin-left: auto margin-right: auto" id = 'player-image' style="margin-left: 13px;"><br>
+			<table class="one" cellspacing=0px; cellpadding=10px;>
+				<tr>
+					<td><b>Date of Birth</b></td>
+					<td><b>:</b></td>
+					<td id='born'></td>
+				</tr>
+				<tr>
+					<td width=18%><b>Age</b></td>
+					<td><b>:</b></td>
+					<td id='currentAge'></td>
+				</tr>
+				<tr>
+					<td><b>Profile</b></td>
+					<td><b>:</b></td>
+					<td id='profile'></td>
+				</tr>
+				<tr>
+					<td><b>Batting Style</b></td>
+					<td><b>:</b></td>
+					<td id='battingStyle'></td>
+				</tr>
+				<tr>
+					<td><b>Playing Role</b></td>
+					<td><b>:</b></td>
+					<td id='playingRole'></td>
+				</tr>
+				<tr>
+					<td><b>Teams Played For</b></td>
+					<td><b>:</b></td>
+					<td id='majorTeams'></td>
+				</tr>
+			</table>
+				<h1 align= center>Batting Carrer Summary</h1>
+				<div style="text-align: center">
+				<table class="one taa" cellspacing=0px cellpadding=10px>
+					<tr>
+						<td width=10%></td>
+						<td><big><b>Fours</b></big></td>
+						<td><big><b>Sixes</b></big></td>
+						<td><big><b>Fifties</b></big></td>
+						<td><big><b>Hundreds</b></big></td>
+						<td><big><b>Ave</b></big></td>
+						<td><big><b>BF</b></big></td>
+						<td><big><b>CT</b></big></td>
+						<td><big><b>HS</b></big></td>
+						<td><big><b>Inns</b></big></td>
+						<td><big><b>Mat</b></big></td>
+						<td><big><b>NO</b></big></td>
+						<td><big><b>Runs</b></big></td>
+						<td><big><b>SR</b></big></td>
+						<td><big><b>ST</b></big></td>
+					</tr>
+					<tr>
+						<td><big><b>ODI:</b></big></td>
+						<td id='bo4s'></td>
+						<td id='bo6s'></td>
+						<td id='bo50'></td>
+						<td id='bo100'></td>
+						<td id='boAve'></td>
+						<td id='boBF'></td>
+						<td id='boCt'></td>
+						<td id='boHS'></td>
+						<td id='boInns'></td>
+						<td id='boMat'></td>
+						<td id='boNO'></td>
+						<td id='boRuns'></td>
+						<td id='boSR'></td>
+						<td id='boSt'></td>
+					</tr>
+					<tr>
+						<td><big><b>T20:</b></big></td>
+						<td id='bt4s'></td>
+						<td id='bt6s'></td>
+						<td id='bt50'></td>
+						<td id='bt100'></td>
+						<td id='btAve'></td>
+						<td id='btBF'></td>
+						<td id='btCt'></td>
+						<td id='btHS'></td>
+						<td id='btInns'></td>
+						<td id='btMat'></td>
+						<td id='btNO'></td>
+						<td id='btRuns'></td>
+						<td id='btSR'></td>
+						<td id='btSt'></td>
+					</tr>
+					<tr>
+						<td><big><b>First Class:</b></big></td>
+						<td id='bf4s'></td>
+						<td id='bf6s'></td>
+						<td id='bf50'></td>
+						<td id='bf100'></td>
+						<td id='bfAve'></td>
+						<td id='bfBF'></td>
+						<td id='bfCt'></td>
+						<td id='bfHS'></td>
+						<td id='bfInns'></td>
+						<td id='bfMat'></td>
+						<td id='bfNO'></td>
+						<td id='bfRuns'></td>
+						<td id='bfSR'></td>
+						<td id='bfSt'></td>
+					</tr>
+					<tr>
+						<td><big><b>List A:</b></big></td>
+						<td id='bl4s'></td>
+						<td id='bl6s'></td>
+						<td id='bl50'></td>
+						<td id='bl100'></td>
+						<td id='blAve'></td>
+						<td id='blBF'></td>
+						<td id='blCt'></td>
+						<td id='blHS'></td>
+						<td id='blInns'></td>
+						<td id='blMat'></td>
+						<td id='blNO'></td>
+						<td id='blRuns'></td>
+						<td id='blSR'></td>
+						<td id='blSt'></td>
+					</tr>
+					<tr>
+						<td><big><b>Tests:</b></big></td>
+						<td id='btest4s'></td>
+						<td id='btest6s'></td>
+						<td id='btest50'></td>
+						<td id='btest100'></td>
+						<td id='btestAve'></td>
+						<td id='btestBF'></td>
+						<td id='btestCt'></td>
+						<td id='btestHS'></td>
+						<td id='btestInns'></td>
+						<td id='btestMat'></td>
+						<td id='btestNO'></td>
+						<td id='btestRuns'></td>
+						<td id='btestSR'></td>
+						<td id='btestSt'></td>
+					</tr>
+				</table>
+			</div>
+				<h1 align= center>Bowling Carrer Summary</h1>
+				<table class="one taa" cellspacing=0px cellpadding=10px>
+					<tr>
+						<td width=10%></td>
+						<td><big><b>4W</b></big></td>
+						<td><big><b>5W</b></big></td>
+						<td><big><b>10</b></big></td>
+						<td><big><b>Ave</b></big></td>
+						<td><big><b>BBI</b></big></td>
+						<td><big><b>BBM</b></big></td>
+						<td><big><b>Balls</b></big></td>
+						<td><big><b>Econ</b></big></td>
+						<td><big><b>Inns</b></big></td>
+						<td><big><b>Mat</b></big></td>
+						<td><big><b>Runs</b></big></td>
+						<td><big><b>SR</b></big></td>
+						<td><big><b>Wkts</b></big></td>
+					</tr>
+					<tr>
+						<td><big><b>ODI:</b></big></td>
+						<td id='o4w'></td>
+						<td id='o5w'></td>
+						<td id='o10'></td>
+						<td id='oAve'></td>
+						<td id='oBBI'></td>
+						<td id='oBBM'></td>
+						<td id='oBalls'></td>
+						<td id='oEcon'></td>
+						<td id='oInns'></td>
+						<td id='oMat'></td>
+						<td id='oRuns'></td>
+						<td id='oSR'></td>
+						<td id='oWkts'></td>
+					</tr>
+					<tr>
+						<td><big><b>T20:</b></big></td>
+						<td id='t4w'></td>
+						<td id='t5w'></td>
+						<td id='t10'></td>
+						<td id='tAve'></td>
+						<td id='tBBI'></td>
+						<td id='tBBM'></td>
+						<td id='tBalls'></td>
+						<td id='tEcon'></td>
+						<td id='tInns'></td>
+						<td id='tMat'></td>
+						<td id='tRuns'></td>
+						<td id='tSR'></td>
+						<td id='tWkts'></td>
+					</tr>
+					<tr>
+						<td><big><b>First Class:</b></big></td>
+						<td id='f4w'></td>
+						<td id='f5w'></td>
+						<td id='f10'></td>
+						<td id='fAve'></td>
+						<td id='fBBI'></td>
+						<td id='fBBM'></td>
+						<td id='fBalls'></td>
+						<td id='fEcon'></td>
+						<td id='fInns'></td>
+						<td id='fMat'></td>
+						<td id='fRuns'></td>
+						<td id='fSR'></td>
+						<td id='fWkts'></td>
+					</tr>
+					<tr>
+						<td><big><b>List A:</b></big></td>
+						<td id='l4w'></td>
+						<td id='l5w'></td>
+						<td id='l10'></td>
+						<td id='lAve'></td>
+						<td id='lBBI'></td>
+						<td id='lBBM'></td>
+						<td id='lBalls'></td>
+						<td id='lEcon'></td>
+						<td id='lInns'></td>
+						<td id='lMat'></td>
+						<td id='lRuns'></td>
+						<td id='lSR'></td>
+						<td id='lWkts'></td>
+					</tr>
+					<tr>
+						<td><big><b>Tests:</b></big></td>
+						<td id='test4w'></td>
+						<td id='test5w'></td>
+						<td id='test10'></td>
+						<td id='testAve'></td>
+						<td id='testBBI'></td>
+						<td id='testBBM'></td>
+						<td id='testBalls'></td>
+						<td id='testEcon'></td>
+						<td id='testInns'></td>
+						<td id='testMat'></td>
+						<td id='testRuns'></td>
+						<td id='testSR'></td>
+						<td id='testWkts'></td>
+					</tr>
+				</table>
+		</div>
+		<script>
+
+		function handleErr(msg, url, line_no){
+   var errorMsg = "Error: " + msg + "\n";
+       errorMsg += "URL: " + url + "\n";
+       errorMsg += "Line: " + line_no + "\n\n";
+
+    console.log(errorMsg);
+
+ return true;
+}
+
+
+onerror = handleErr;
+
+		var url = parent.document.URL;
+
+		var pid = url.substring(url.indexOf('?')+1,url.length);
+
+		var url = 'https://cricapi.com/api/playerStats?apikey=2r9Q3bXcsRYHEB3moGyhfd6iMKG2&pid='+pid
+
+			var xhr = new XMLHttpRequest();
+
+			xhr.open('GET', url)
+
+			xhr.onreadystatechange = test
+
+			function test(){
+				if(this.status == 200 && this.readyState == 4){
+					var res_data = JSON.parse(this.responseText);
+					console.log(typeof res_data);
+					console.log(res_data);
+			 	var img_url = res_data.imageURL;
+			 	var get_tag = document.getElementById('player-image');
+				if(img_url != null){
+			 		get_tag.setAttribute('src', img_url);
+				}
+				else{
+					get_tag.setAttribute('src', 'user.svg');
+				}
+
+				// basic info
+				try{
+			 	document.getElementById('name').appendChild(document.createTextNode(res_data.fullName))
+			 	document.getElementById('born').appendChild(document.createTextNode(res_data.born))
+			 	document.getElementById('currentAge').appendChild(document.createTextNode(res_data.currentAge))
+			 	document.getElementById('country').appendChild(document.createTextNode(res_data.country))
+			 	document.getElementById('profile').appendChild(document.createTextNode(res_data.profile))
+			 	document.getElementById('battingStyle').appendChild(document.createTextNode(res_data.battingStyle))
+			 	document.getElementById('playingRole').appendChild(document.createTextNode(res_data.playingRole))
+			 	document.getElementById('majorTeams').appendChild(document.createTextNode(res_data.majorTeams))
+			}
+			catch(err){
+
+			}
+				// basic info
+
+				// batting info
+				// ODIs
+				try{
+				var x = res_data.data.batting.ODIs['4s'];
+				if((x == '')||(x == '-') ){ x = '--'}
+				document.getElementById('bo4s').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.ODIs['6s'];
+				if((x == '')||(x == '-') ){ x = '--'}
+				document.getElementById('bo6s').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.ODIs[50];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('bo50').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.ODIs[100];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('bo100').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.ODIs.Ave;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('boAve').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.ODIs.BF;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('boBF').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.ODIs.Ct;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('boCt').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.ODIs.HS;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('boHS').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.ODIs.Inns;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('boInns').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.ODIs.Mat;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('boMat').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.ODIs.NO;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('boNO').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.ODIs.Runs;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('boRuns').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.ODIs.SR;
+				if((x == '')||(x == '-') ){ x = '--'}
+				document.getElementById('boSR').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.ODIs.St;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('boSt').appendChild(document.createTextNode(x))
+			}
+			catch(err){
+
+			}
+				// ODIs
+
+				// T20
+				try{
+				var x = res_data.data.batting.T20Is['4s'];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('bt4s').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.T20Is['6s'];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('bt6s').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.T20Is[50];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('bt50').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.T20Is[100];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('bt100').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.T20Is.Ave;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('btAve').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.T20Is.BF;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('btBF').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.T20Is.Ct;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('btCt').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.T20Is.HS;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('btHS').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.T20Is.Inns;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('btInns').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.T20Is.Mat;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('btMat').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.T20Is.NO;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('btNO').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.T20Is.Runs;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('btRuns').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.T20Is.SR;
+				if((x == '')||(x == '-') ){ x = '--'}
+				document.getElementById('btSR').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.T20Is.St;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('btSt').appendChild(document.createTextNode(x))
+			}
+			catch(err){
+
+			}
+				// T20
+
+				// firstClass
+				try{
+				var x = res_data.data.batting.T20Is['4s'];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('bf4s').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.firstClass['6s'];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('bf6s').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.firstClass[50];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('bf50').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.firstClass[100];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('bf100').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.firstClass.Ave;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('bfAve').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.firstClass.BF;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('bfBF').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.firstClass.Ct;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('bfCt').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.firstClass.HS;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('bfHS').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.firstClass.Inns;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('bfInns').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.firstClass.Mat;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('bfMat').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.firstClass.NO;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('bfNO').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.firstClass.Runs;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('bfRuns').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.firstClass.SR;
+				if((x == '')||(x == '-') ){ x = '--'}
+				document.getElementById('bfSR').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.firstClass.St;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('bfSt').appendChild(document.createTextNode(x))
+			}
+			catch(err){
+
+			}
+				// firstClass
+
+				// listA
+				try{
+				var x = res_data.data.batting.listA['4s'];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('bl4s').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.listA['6s'];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('bl6s').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.listA[50];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('bl50').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.listA[100];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('bl100').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.listA.Ave;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('blAve').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.listA.BF;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('blBF').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.listA.Ct;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('blCt').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.listA.HS;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('blHS').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.listA.Inns;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('blInns').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.listA.Mat;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('blMat').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.listA.NO;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('blNO').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.listA.Runs;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('blRuns').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.listA.SR;
+				if((x == '')||(x == '-') ){ x = '--'}
+				document.getElementById('blSR').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.listA.St;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('blSt').appendChild(document.createTextNode(x))
+			}
+			catch(err){
+
+			}
+				// listA
+
+				// tests
+				try{
+				var x = res_data.data.batting.tests['4s'];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('btest4s').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.tests['6s'];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('btest6s').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.tests[50];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('btest50').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.tests[100];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('btest100').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.tests.Ave;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('btestAve').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.tests.BF;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('btestBF').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.tests.Ct;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('btestCt').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.tests.HS;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('btestHS').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.tests.Inns;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('btestInns').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.tests.Mat;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('btestMat').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.tests.NO;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('btestNO').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.tests.Runs;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('btestRuns').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.tests.SR;
+				if((x == '')||(x == '-') ){ x = '--'}
+				document.getElementById('btestSR').appendChild(document.createTextNode(x))
+				var x = res_data.data.batting.tests.St;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('btestSt').appendChild(document.createTextNode(x))
+			}
+			catch(err){
+
+			}
+				// tests
+
+
+				// Bowling
+				// ODIs
+				try{
+				var x = res_data.data.bowling.ODIs['4w'];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('o4w').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.ODIs['5w'];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('o5w').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.ODIs[10];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('o10').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.ODIs.Ave;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('oAve').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.ODIs.BBI;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('oBBI').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.ODIs.BBM;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('oBBM').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.ODIs.Balls;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('oBalls').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.ODIs.Econ;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('oEcon').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.ODIs.Inns;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('oInns').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.ODIs.Mat;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('oMat').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.ODIs.Runs;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('oRuns').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.ODIs.SR;
+				if((x == '')||(x == '-') ){ x = '--'}
+				document.getElementById('oSR').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.ODIs.Wkts;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('oWkts').appendChild(document.createTextNode(x))
+			}
+			catch(err){
+
+			}
+				// ODIs
+
+				// T20
+				try{
+				var x = res_data.data.bowling.T20Is['4w'];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('t4w').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.T20Is['5w'];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('t5w').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.T20Is[10];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('t10').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.T20Is.Ave;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('tAve').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.T20Is.BBI;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('tBBI').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.T20Is.BBM;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('tBBM').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.T20Is.Balls;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('tBalls').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.T20Is.Econ;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('tEcon').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.T20Is.Inns;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('tInns').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.T20Is.Mat;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('tMat').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.T20Is.Runs;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('tRuns').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.T20Is.SR;
+				if((x == '')||(x == '-') ){ x = '--'}
+				document.getElementById('tSR').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.T20Is.Wkts;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('tWkts').appendChild(document.createTextNode(x))
+			}
+			catch(err){
+
+			}
+				// T20
+
+				// firstClass
+				try{
+				var x = res_data.data.bowling.firstClass['4w'];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('f4w').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.firstClass['5w'];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('f5w').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.firstClass[10];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('f10').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.firstClass.Ave;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('fAve').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.firstClass.BBI;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('fBBI').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.firstClass.BBM;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('fBBM').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.firstClass.Balls;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('fBalls').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.firstClass.Econ;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('fEcon').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.firstClass.Inns;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('fInns').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.firstClass.Mat;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('fMat').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.firstClass.Runs;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('fRuns').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.firstClass.SR;
+				if((x == '')||(x == '-') ){ x = '--'}
+				document.getElementById('fSR').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.firstClass.Wkts;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('fWkts').appendChild(document.createTextNode(x))
+			}
+			catch(err){
+
+			}
+				// firstClass
+
+				// listA
+				try{
+				var x = res_data.data.bowling.listA['4w'];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('l4w').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.listA['5w'];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('l5w').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.listA[10];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('l10').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.listA.Ave;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('lAve').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.listA.BBI;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('lBBI').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.listA.BBM;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('lBBM').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.listA.Balls;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('lBalls').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.listA.Econ;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('lEcon').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.listA.Inns;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('lInns').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.listA.Mat;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('lMat').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.listA.Runs;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('lRuns').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.listA.SR;
+				if((x == '')||(x == '-') ){ x = '--'}
+				document.getElementById('lSR').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.listA.Wkts;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('lWkts').appendChild(document.createTextNode(x))
+			}
+			catch(err){
+
+			}
+				// listA
+
+				// tests
+				try{
+				var x = res_data.data.bowling.tests['4w'];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('test4w').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.tests['5w'];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('test5w').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.tests[10];
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('test10').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.tests.Ave;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('testAve').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.tests.BBI;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('testBBI').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.tests.BBM;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('testBBM').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.tests.Balls;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('testBalls').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.tests.Econ;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('testEcon').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.tests.Inns;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('testInns').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.tests.Mat;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('testMat').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.tests.Runs;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('testRuns').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.tests.SR;
+				if((x == '')||(x == '-') ){ x = '--'}
+				document.getElementById('testSR').appendChild(document.createTextNode(x))
+				var x = res_data.data.bowling.tests.Wkts;
+				if((x == '')||(x == '-') ) x = '--'
+				document.getElementById('testWkts').appendChild(document.createTextNode(x))
+			}
+			catch(err){
+
+			}
+				// tests
+
+			}
+		}
+	xhr.send()
+	</script>
+</body>
+<footer>
+	<div class="foot">
+		<table style="width:100%"><tr>
+			<td>
+	 <h3>Follow Us :</h3>
+	<td>
+<br><b>Address : Chitkara University,Rajpura</b></big><br><br>
+					Contact : 9999977777<br><br>
+			 &copy Copyright 2019 All rights reserved</p><br>
+</td>
+<td> <center><h3>Resume<h3></center>
+				 <a class ="foo" href="http://ajayjangid12.github.io/resume"><center>Ajay Jangid</center></a><br>
+			 <a class ="foo" href="http://ankit59345.github.io/resume"><center>Ankit kumar</center></a>
+			 </td>
+		 </tr>
+			 <table>
+				</div>
+</footer>
+</html>
