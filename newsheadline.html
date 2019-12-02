@@ -1,0 +1,159 @@
+<html>
+<head>
+	<title>CricLive/News</title>
+	<link rel="stylesheet" href="news.css">
+	</head>
+	<body>
+
+		<div class='container'>
+		<div class="navigation-bar">
+				<div id="navigation-container">
+				 <a href="index.html"><img src="logo4.png" height="70px"></a>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Browse Players</a></li>
+            <li><a href="match.html">Matches Results</a></li>
+            <li><a href="newsheadline.html">Sports News</a></li>
+					</ul>
+				</div>
+		</div>
+
+		 <div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 5</div>
+  <div id="pi1"></div>
+  <div class="text"></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 5<br></div>
+  <div id="pi2"></div>
+  <div class="text"></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 5</div>
+  <<div id="pi3"></div>
+  <div class="text"></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">4 / 5</div>
+  <<div id="pi4"></div>
+  <div class="text"></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">5 / 5</div>
+  <<div id="pi5"></div>
+  <div class="text"></div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+	<span class="dot" onclick="currentSlide(4)"></span>
+	<span class="dot" onclick="currentSlide(5)"></span>
+</div>
+<footer>
+	<div class="foot">
+		<table style="width:100%"><tr>
+			<td>
+	 <h3>Follow Us :</h3>
+	<td>
+<br><b>Address : Chitkara University,Rajpura</b></big><br><br>
+					Contact : 9999977777<br><br>
+			 &copy Copyright 2019 All rights reserved</p><br>
+</td>
+<td> <center><h3>Resume<h3></center>
+				 <a class ="foo" href="http://ajayjangid12.github.io/resume"><center>Ajay Jangid</center></a><br>
+			 <a class ="foo" href="http://ankit59345.github.io/resume"><center>Ankit kumar</center></a>
+			 </td>
+		 </tr>
+			 <table>
+				</div>
+</footer>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+
+
+		<script>
+		var url = 'https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=ed6730be750e4dd4ab08c5d7e87da911'
+
+			var xhr = new XMLHttpRequest();
+
+			xhr.open('GET', url)
+
+			xhr.onreadystatechange = fnews;
+
+			var id;
+			function fnews(){
+				if(this.status == 200 && this.readyState == 4){
+					var res_data = JSON.parse(this.responseText);
+					console.log(res_data);
+					var cont = res_data.articles[6];
+ 					var get_tag = document.getElementById('pi1');
+ 					get_tag.innerHTML += " <h2>" +  cont.title + "</h2> <br> <h4>"+cont.description+"</h4> <br> <h4>"+cont.source.name+"|"+cont.publishedAt+"</h4><hr> <br><center> <img src="+cont.urlToImage+" > </center>";
+
+					var cont = res_data.articles[7];
+					 var get_tag = document.getElementById('pi2');
+					 get_tag.innerHTML += "<h2>" +  cont.title + "</h2> <br> <h4>"+cont.description+"</h4> <br> <h4>"+cont.source.name+"|"+cont.publishedAt+"</h4><hr> <br><center> <img src="+cont.urlToImage+"></center>";
+
+
+					var cont = res_data.articles[8];
+ 				 var get_tag = document.getElementById('pi3');
+ 				 get_tag.innerHTML += "<h2>" +  cont.title + "</h2> <br> <h4>"+cont.description+"</h4> <br> <h4>"+cont.source.name+"|"+cont.publishedAt+"</h4><hr> <br><center> <img src="+cont.urlToImage+"></center>";
+
+				 var cont = res_data.articles[9];
+ 				var get_tag = document.getElementById('pi4');
+ 				get_tag.innerHTML += "<h2>" +  cont.title + "</h2> <br> <h4>"+cont.description+"</h4> <br> <h4>"+cont.source.name+"|"+cont.publishedAt+"</h4><hr><br><center> <img src="+cont.urlToImage+"></center>";
+
+				var cont = res_data.articles[17];
+				var get_tag = document.getElementById('pi5');
+				get_tag.innerHTML += "<h2>" +  cont.title + "</h2> <br> <h4>"+cont.description+"</h4> <br> <h4>"+cont.source.name+"|"+cont.publishedAt+"</h4><hr> <br> <center> <img src="+cont.urlToImage+"> </center>";
+
+
+				}
+			}
+			xhr.send();
+			</script>
+
+
+
+</body>
+</html>
