@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+<link rel="stylesheet" href="ind.css">
+    <title></title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'>
+    </script>
+    <script src='ind.js'>
+
+    </script>
+  </head>
+  <body>
+    <div class='container'>
+    <div class="navigation-bar">
+        <div id="navigation-container">
+         <a href="#topnav"><img src="logo4.png" height="70px"></a>
+          <ul>
+            <li><a href="ind.html">Home</a></li>
+            <li><a href="ind.html">Browse Players</a></li>
+            <li><a href="match.html">Today's Matches</a></li>
+            <li><a href="newsheadline.html">Sports News</a></li>
+          </ul>
+        </div>
+    </div>
+  </div>
+
+    <div class='box'>
+      <div class="searchBox">
+        <input type="text" placeholder="  Enter Player Name" id="inputText" class="inputbox" style="padding:5px">
+        <button type="button" name="button" id="searchButton" class="buttonbox" onclick="a()"><b>SEARCH</b></button>
+      </div>
+      <div id='plname'>
+    </div>
+  </div>
+
+
+
+
+
+<script>
+function a(){
+  document.getElementById('plname').innerHTML='';
+  var name = document.getElementById('inputText').value;
+  if(name == ''){
+    window.alert('Enter Some Value');
+    return;
+  }
+
+  var url = 'https://cricapi.com/api/playerFinder?apikey=eOSznbhkY2UupTYViTlG1snVGR53&name='+name;
+
+  var xhr = new XMLHttpRequest();
+
+  xhr.open('GET', url);
+
+  xhr.onreadystatechange = test
+
+  function test(){
+    if(xhr.status == 200 && xhr.readyState == 4){
+      console.log();
+      var res_data = JSON.parse(xhr.responseText);
+      console.log(res_data);
+      if(res_data.data.length == 0){
+        window.alert("No Results Found");
+      }
+      for(var i=0; i<res_data.data.length;i++){
+      localStorage.setItem('pid', res_data.data[i].pid);
+      aaa();
+      }
+    }
+  }
+  xhr.send();
+}
+
+</script>
+<script>
+function aaa(){
+  var name = document.getElementById('inputText').value;
+  var pid = localStorage.getItem('pid');
+  console.log(pid);
+
+var url = 'https://cricapi.com/api/playerStats?apikey=2r9Q3bXcsRYHEB3moGyhfd6iMKG2&pid='+pid;
+
+var xhr = new XMLHttpRequest();
+
+xhr.open('GET', url);
+xhr.onreadystatechange = final
+function final(){
+    if(xhr.status == 200 && xhr.readyState == 4){
+    var res_data = JSON.parse(xhr.responseText);
+    console.log(res_data);
+    var div1 = document.createElement('div');
+    var div2 = document.createElement('div');
+    var img = document.createElement('img');
+    div1.setAttribute('class', 'left');
+    div2.setAttribute('class', 'right');
+    img.setAttribute('class', 'img')
+    img.setAttribute('align', 'center')
+    var imgURL = res_data.imageURL;
+      img.setAttribute('src', 'user.svg')
+      div1.appendChild(img)
+    if(imgURL!= null){
+      var image = new Image();
+      image.src = res_data.imageURL;
+      console.log('width: '+this.width);
+      image.onload = function() {
+        img.src = res_data.imageURL;
+      }
+    }
+
+    div1.appendChild(img);
+    var name = document.createTextNode('NAME   : ');
+    var b1 = document.createElement('b');
+    b1.appendChild(name);
+    var country = document.createTextNode('COUNTRY   : ');
+    var b2 = document.createElement('b');
+    b2.appendChild(country)
+    div2.appendChild(b1);
+    div2.appendChild(document.createTextNode(res_data.fullName));
+    div2.appendChild(document.createElement('br'))
+    div2.appendChild(document.createElement('br'))
+    div2.appendChild(document.createElement('br'))
+    div2.appendChild(b2);
+    div2.appendChild(document.createTextNode(res_data.country));
+    var div0 = document.createElement('div');
+    div0.setAttribute('class', 'mainn')
+    var divm = document.getElementById('plname')
+    div0.appendChild(div1);
+    div0.appendChild(div2);
+    var link = document.createElement('a');
+    link.setAttribute('class', 'lenk');
+    var x = 'player-statistics.html?'+res_data.pid;
+    link.setAttribute('href', x);
+    link.appendChild(div0);
+    divm.appendChild(link);
+    divm.appendChild(document.createElement('hr'));
+    }
+  }
+
+xhr.send();
+}
+</script>
+  </body>
+  <footer>
+    <div class="foot">
+      <table style="width:100%"><tr>
+        <td>
+     <h3>Follow Us :</h3>
+    <td>
+  <br><b>Address : Chitkara University,Rajpura</b></big><br><br>
+            Contact : 9999977777<br><br>
+         &copy Copyright 2019 All rights reserved</p><br>
+  </td>
+  <td> <center><h3>Resume<h3></center>
+           <a class ="foo" href="http://ajayjangid12.github.io/resume"><center>Ajay Jangid</center></a><br>
+         <a class ="foo" href="http://ankit59345.github.io/resume"><center>Ankit kumar</center></a>
+         </td>
+       </tr>
+         <table>
+          </div>
+  </footer>
+</html>
